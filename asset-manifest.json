@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/crude-webapp/static/js/main.3f6ed5b3.js",
+    "index.html": "/crude-webapp/index.html",
+    "main.3f6ed5b3.js.map": "/crude-webapp/static/js/main.3f6ed5b3.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.3f6ed5b3.js"
+  ]
+}
