@@ -16,7 +16,7 @@ export function Products() {
     try {
       const response = await axios.get(`https://jsonplaceholder.typicode.com/users${query ? `?q=${query}` : ''}`);
       setUsers(response.data);
-      setDisplayedUsers(response.data.slice(0, 5)); // Display only the first 5 users
+      setDisplayedUsers(response.data.slice(0, 10)); // Display only the first 5 users
     } catch (error) {
       setError(error.message);
     } finally {
@@ -29,7 +29,7 @@ export function Products() {
   }, [fetchUsers]);
 
   useEffect(() => {
-    setDisplayedUsers(users.slice(0, 5)); // Update displayed users when users array changes
+    setDisplayedUsers(users.slice(0)); // Update displayed users when users array changes
   }, [users]);
 
   const handleEdit = (user) => {
@@ -84,7 +84,7 @@ export function Products() {
       const response = await axios.post('https://jsonplaceholder.typicode.com/users', newUser);
       setUsers((prevUsers) => {
         const updatedUsers = [...prevUsers, response.data];
-        setDisplayedUsers(updatedUsers.slice(0, 5)); // Ensure displayedUsers is updated
+        setDisplayedUsers(updatedUsers.slice(0, 10)); // Ensure displayedUsers is updated
         return updatedUsers;
       });
       setCreating(false);
